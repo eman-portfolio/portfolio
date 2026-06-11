@@ -6,50 +6,85 @@
 <title>Eman Mohammed | Full Stack Portfolio</title>
 
 <style>
+:root {
+    --primary: #6D28D9;
+    --secondary: #A78BFA;
+    --accent: #8B5CF6;
+    --bg: #F9FAFB;
+    --card: #FFFFFF;
+    --text: #111827;
+    --muted: #6B7280;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #F8FAFC;
-    color: #1E293B;
+    font-family: "Arial", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #4F46E5, #818CF8);
+    padding: 90px 20px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     color: white;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 .hero h1 {
-    font-size: 50px;
+    font-size: 52px;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .hero p {
     font-size: 18px;
+    opacity: 0.9;
 }
 
 .btn {
     display: inline-block;
-    margin: 10px;
-    padding: 12px 24px;
-    border-radius: 8px;
+    margin: 12px 8px;
+    padding: 12px 22px;
+    border-radius: 10px;
     text-decoration: none;
     color: white;
-    background: #EC4899;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(6px);
     transition: 0.3s;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
+    background: white;
+    color: var(--primary);
 }
 
 /* SECTIONS */
 section {
     max-width: 1000px;
-    margin: 30px auto;
-    padding: 40px 20px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+/* TITLES */
+h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    width: 50px;
+    height: 4px;
+    background: var(--primary);
+    display: block;
+    margin-top: 8px;
+    border-radius: 10px;
 }
 
 /* SKILLS */
@@ -61,37 +96,57 @@ section {
 
 .skills span {
     background: white;
-    border: 1px solid #E2E8F0;
-    padding: 10px 15px;
-    border-radius: 20px;
+    border: 1px solid #E5E7EB;
+    padding: 10px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.skills span:hover {
+    background: var(--primary);
+    color: white;
 }
 
 /* PROJECTS */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
 
 .card {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    background: var(--card);
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
     transition: 0.3s;
+    border: 1px solid #F3F4F6;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(109,40,217,0.15);
 }
 
 .card h3 {
-    color: #4F46E5;
+    color: var(--primary);
+    margin-top: 0;
 }
 
 /* CONTACT */
 .contact {
     text-align: center;
+    padding-bottom: 60px;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 </style>
 </head>
