@@ -1,39 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LockVid Video Encryption System</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LockVid Video Encryption System</title>
+
+<style>
+:root {
+    --primary: #6D28D9;
+    --secondary: #8B5CF6;
+    --bg: #F9FAFB;
+    --card: #FFFFFF;
+    --text: #111827;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+.header p {
+    margin-top: 10px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.section {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+h2 {
+    color: var(--primary);
+}
+
+.tag {
+    display: inline-block;
+    background: #EDE9FE;
+    color: #5B21B6;
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin: 5px;
+}
+
+img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.caption {
+    text-align: center;
+    color: #6B7280;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+</style>
 </head>
 
 <body>
 
 <div class="header">
     <h1>LockVid Video Encryption System</h1>
-    <p>Graduation Project | MATLAB-based Video Security System</p>
+    <p>Graduation Project | MATLAB-Based Video Encryption</p>
 </div>
 
 <div class="container">
 
     <div class="section">
-        <h2>📌 Overview</h2>
+        <h2>Project Overview</h2>
         <p>
-            LockVid is a video encryption system designed to secure video data using advanced
-            signal processing techniques including DCT, SVD, and block scrambling.
+            LockVid is a video encryption system developed as a graduation project.
+            The project focuses on protecting video content using encryption techniques
+            while maintaining quality and processing efficiency.
         </p>
     </div>
 
     <div class="section">
-        <h2>Welcome Page</h2>
+        <h2>Technologies Used</h2>
 
-        <img src="WelcomePage.png"
-             alt="Welcome Page"
-             style="width:100%; border-radius:12px;">
+        <span class="tag">MATLAB</span>
+        <span class="tag">DCT</span>
+        <span class="tag">SVD</span>
+        <span class="tag">Block Scrambling</span>
+        <span class="tag">Chaotic Encryption</span>
+    </div>
+
+    <div class="section">
+        <h2>My Contribution</h2>
+
+        <ul>
+            <li>Designed and implemented the encryption workflow.</li>
+            <li>Applied DCT and SVD techniques.</li>
+            <li>Integrated block scrambling methods.</li>
+            <li>Evaluated encryption and decryption results.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Project Screenshots</h2>
+
+        <p>Replace the example image below with your project screenshots.</p>
+
+        <img src="WelcomePage.jpg" alt="LockVid Screenshot">
 
         <div class="caption">
-            The Welcome Page is shown.
+            Figure 1: Example project screenshot.
         </div>
     </div>
+
+    <a href="index.html" class="back-btn">
+        ← Back to Portfolio
+    </a>
 
 </div>
 
