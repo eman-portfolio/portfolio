@@ -1,169 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LockVid Video Encryption System</title>
-
-<style>
-:root {
-    --primary: #6D28D9;
-    --secondary: #8B5CF6;
-    --bg: #F9FAFB;
-    --card: #FFFFFF;
-    --text: #111827;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-}
-
-.header {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 42px;
-}
-
-.header p {
-    margin-top: 10px;
-}
-
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-.section {
-    background: white;
-    padding: 25px;
-    border-radius: 16px;
-    margin-bottom: 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-}
-
-h2 {
-    color: var(--primary);
-}
-
-.tag {
-    display: inline-block;
-    background: #EDE9FE;
-    color: #5B21B6;
-    padding: 8px 14px;
-    border-radius: 999px;
-    margin: 5px;
-}
-
-img {
-    width: 100%;
-    border-radius: 12px;
-    margin-top: 15px;
-}
-
-.caption {
-    text-align: center;
-    color: #6B7280;
-    font-size: 14px;
-    margin-top: 8px;
-}
-
-.back-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background: var(--primary);
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="header">
-    <h1>LockVid Video Encryption System</h1>
-    <p>Graduation Project | MATLAB-Based Video Encryption</p>
-</div>
-
-<div class="container">
-
-    <div class="section">
-        <h2>Project Overview</h2>
-        <p>
-            LockVid is a video encryption system developed as a graduation project.
-            The project focuses on protecting video content using encryption techniques
-            while maintaining quality and processing efficiency.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>Technologies Used</h2>
-
-        <span class="tag">MATLAB</span>
-        <span class="tag">DCT</span>
-        <span class="tag">SVD</span>
-        <span class="tag">Block Scrambling</span>
-        <span class="tag">Chaotic Encryption</span>
+<li>User-Friendly Interface.</li>
+            <li>Secure Block Scrambling Mechanism.</li>
+            <li>Efficient Processing Workflow.</li>
+            <li>Quality Preservation After Decryption.</li>
+        </ul>
     </div>
 
     <div class="section">
         <h2>My Contribution</h2>
 
         <ul>
-            <li>Designed and implemented the encryption workflow.</li>
-            <li>Applied DCT and SVD techniques.</li>
-            <li>Integrated block scrambling methods.</li>
-            <li>Evaluated encryption and decryption results.</li>
+            <li>Participated in designing the encryption workflow.</li>
+            <li>Implemented and integrated encryption techniques.</li>
+            <li>Conducted testing and evaluation of system performance.</li>
+            <li>Contributed to system interface development and project documentation.</li>
         </ul>
     </div>
 
-   <div class="section">
-    <h2>System Interface & Workflow</h2>
+    <div class="section">
 
-    <p>
-        The following screenshots demonstrate the main workflow of the LockVid system,
-        from launching the application to performing encryption and decryption operations.
-    </p>
+        <h2>System Interface</h2>
 
-    <img src="WelcomePage.jpg" alt="Welcome Page">
-    <div class="caption">
-        Figure 1: Welcome screen displayed when launching the LockVid application.
+        <p>
+            The following screenshots demonstrate the main interfaces and workflow of the LockVid system.
+        </p>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <img src="WelcomePage.jpg" alt="Welcome Page">
+                <div class="caption">
+                    Welcome screen displayed when launching the application.
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="HomePage.jpg" alt="Home Page">
+                <div class="caption">
+                    Main dashboard providing access to system functions.
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="SelectVPage.jpg" alt="Video Selection Page">
+                <div class="caption">
+                    Interface for selecting the target video file.
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="DownloadPage.jpg" alt="Download Page">
+                <div class="caption">
+                    Output and download page for processed videos.
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="EncPage.jpg" alt="Encryption Page">
+                <div class="caption">
+                    Encryption interface demonstrating the protection process.
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="DecPage.jpg" alt="Decryption Page">
+                <div class="caption">
+                    Decryption interface used to restore encrypted content.
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-    <img src="HomePage.jpg" alt="Home Page">
-    <div class="caption">
-        Figure 2: Main dashboard providing access to encryption and decryption functions.
+    <div class="section">
+
+        <h2>Encryption Results</h2>
+
+        <img src="Enc-DecResults.jpg" alt="Encryption Results" class="result-image">
+
+        <div class="caption">
+            Comparison between the original frame, encrypted output, and decrypted result.
+        </div>
+
+        <p style="margin-top:15px;">
+            The results demonstrate the effectiveness of the encryption process in protecting
+            video content while preserving acceptable visual quality after decryption.
+        </p>
+
     </div>
 
-    <img src="SelectVPage.jpg" alt="Video Selection Page">
-    <div class="caption">
-        Figure 3: Video selection page used to choose the target video file.
+    <div class="section">
+
+        <h2>Project Outcome</h2>
+
+        <p>
+            LockVid successfully demonstrates a secure and efficient approach for video
+            encryption using MATLAB. The project achieved its objectives by combining
+            multiple encryption techniques while maintaining usability and video quality.
+        </p>
+
     </div>
 
-    <img src="DownloadPage.jpg" alt="Download Page">
-    <div class="caption">
-        Figure 4: Output and download page for saving processed video files.
-    </div>
-
-    <img src="EncPage.jpg" alt="Encryption Page">
-    <div class="caption">
-        Figure 5: Encryption interface demonstrating the video protection process.
-    </div>
-
-    <img src="DecPage.jpg" alt="Decryption Page">
-    <div class="caption">
-        Figure 6: Decryption interface used to restore encrypted video content.
-    </div>
+    <a href="index.html" class="back-btn">
+        Back to Portfolio
+    </a>
 
 </div>
 
