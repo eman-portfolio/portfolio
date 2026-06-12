@@ -91,36 +91,52 @@ ul{
     font-size:13px;
 }
 
-/* GALLERY */
+/* =========================
+   SYSTEM INTERFACE FIX
+   ========================= */
+
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:15px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:12px;
     margin-top:15px;
 }
 
 .gallery img{
     width:100%;
+    height:180px;          /* 👈 توحيد الحجم */
+    object-fit:cover;     /* 👈 يمنع التمدد */
     border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* RESULT IMAGE */
-.result img{
-    width:100%;
-    border-radius:12px;
-    margin-top:10px;
-}
-
-/* CAPTION */
 .caption{
-    font-size:13px;
+    font-size:12px;
     text-align:center;
     color:#6B7280;
-    margin-top:6px;
+    margin-top:5px;
 }
 
-/* BACK */
+/* =========================
+   RESULTS SECTION FIX
+   ========================= */
+
+.result-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:15px;
+}
+
+.result-grid img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* BACK BUTTON */
 .back{
     display:inline-block;
     margin-top:10px;
@@ -153,8 +169,7 @@ ul{
         <h2>Project Overview</h2>
         <p>
             LockVid is a video encryption system developed using MATLAB.
-            It secures video content using DCT, SVD, and scrambling techniques
-            while maintaining quality after decryption.
+            It secures video content using DCT, SVD, and scrambling techniques.
         </p>
     </div>
 
@@ -164,7 +179,7 @@ ul{
         <ul>
             <li>Secure video data from unauthorized access</li>
             <li>Maintain video quality after decryption</li>
-            <li>Improve encryption performance</li>
+            <li>Improve encryption efficiency</li>
         </ul>
     </div>
 
@@ -182,7 +197,6 @@ ul{
     <!-- FEATURES -->
     <div class="section">
         <h2>Key Features</h2>
-
         <ul>
             <li>Video Encryption & Decryption</li>
             <li>User Friendly Interface</li>
@@ -194,24 +208,22 @@ ul{
     <!-- MY ROLE -->
     <div class="section">
         <h2>My Contribution</h2>
-
         <ul>
             <li>Designed encryption workflow</li>
-            <li>Implemented DCT & SVD techniques</li>
+<li>Implemented MATLAB techniques</li>
             <li>Built scrambling mechanism</li>
-            <li>Tested system results</li>
+            <li>Tested system performance</li>
         </ul>
     </div>
 
-    <!-- UI IMAGES -->
+    <!-- SYSTEM INTERFACE -->
     <div class="section">
         <h2>System Interface</h2>
 
         <div class="gallery">
 
             <div>
-                <img src="WelcomePage.
-jpg">
+                <img src="WelcomePage.jpg">
                 <div class="caption">Welcome Page</div>
             </div>
 
@@ -222,7 +234,7 @@ jpg">
 
             <div>
                 <img src="SelectVPage.jpg">
-                <div class="caption">Select Video Page</div>
+                <div class="caption">Select Video</div>
             </div>
 
             <div>
@@ -247,11 +259,18 @@ jpg">
     <div class="section">
         <h2>Encryption Results</h2>
 
-        <div class="result">
-            <img src="Enc-DceResults.jpg">
-            <div class="caption">
-                Original vs Encrypted vs Decrypted Frame Comparison
+        <div class="result-grid">
+
+            <div>
+                <img src="Enc-DecResults.jpg">
+                <div class="caption">Result 1</div>
             </div>
+
+            <div>
+                <img src="Enc-DecResults2.jpg">
+                <div class="caption">Result 2</div>
+            </div>
+
         </div>
     </div>
 
@@ -259,8 +278,8 @@ jpg">
     <div class="section">
         <h2>Project Outcome</h2>
         <p>
-            The system successfully demonstrates secure video encryption using MATLAB
-            while maintaining output quality after decryption.
+            The system successfully demonstrates secure video encryption with high efficiency
+            and good visual quality after decryption.
         </p>
     </div>
 
