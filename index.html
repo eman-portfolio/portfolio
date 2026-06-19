@@ -1,157 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eman Mohammed | Portfolio</title>
-    <style>
-        :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-color: #0f172a;
-            --text-muted: #64748b;
-            --primary: #0284c7;
-            --primary-light: #e0f2fe;
-            --secondary: #10b981;
-            --border-color: #e2e8f0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-        }
-
-        /* Hero Section */
-        header {
-            text-align: center;
-            padding: 40px 25px;
-            margin-bottom: 40px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        header h1 {
-            font-size: 2.6rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        header p {
-            color: #334155;
-            font-size: 0.95rem;
-            max-width: 780px;
-            margin: 0 auto;
-            text-align: justify;
-            text-justify: inter-word;
-            line-height: 1.7;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            color: var(--text-color);
-            margin: 40px 0 20px 0;
-            position: relative;
-            padding-bottom: 8px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 4px;
-            background-color: var(--primary);
-            border-radius: 2px;
-        }
-
-        /* Skills Layout */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .skills-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            border-radius: 12px;
-        }
-
-        .skills-box h3 {
-            font-size: 1.1rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tech-badge {
-            background: #f1f5f9;
-            color: #334155;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid #e2e8f0;
-        }
-
-        /* Projects Dashboard Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 20px;
-        }
-
-        .project-thumbnail {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 30px 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-        }
-
-        .project-thumbnail:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 12px 20px rgba(2, 132, 199, 0.08);
-        }
-
-        .project-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-
-        .project-thumbnail h3 {
-            font-size: 1.1rem;
 color: var(--text-color);
             font-weight: 600;
         }
@@ -188,7 +34,7 @@ color: var(--text-color);
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            max-width: 750px;
+            max-width: 780px;
             width: 100%;
             padding: 35px;
             position: relative;
@@ -265,46 +111,88 @@ color: var(--text-color);
             top: 0;
         }
 
-        /* --- New Image Gallery Layouts --- */
+        /* --- Standard Image Gallery Grid --- */
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 10px;
             margin: 20px 0;
             background: #f8fafc;
-            padding: 15px;
+            padding: 12px;
             border-radius: 12px;
             border: 1px dashed var(--border-color);
         }
 
-        /* Specialized grid for mobile UI screenshots (Project 3) */
-        .mobile-gallery {
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        }
-
         .gallery-item {
             width: 100%;
-            height: 100px;
+            height: 90px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
             cursor: pointer;
             transition: all 0.2s ease;
             background: #ffffff;
         }
 
-        /* Mobile specific item aspect-ratio */
-        .mobile-gallery .gallery-item {
-            height: 160px; /* Taller for mobile UI frames */
-        }
-
         .gallery-item:hover {
             transform: scale(1.05);
             border-color: var(--primary);
-box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
         }
 
-        /* Lightbox Fullscreen Preview */
+        /* --- Premium Horizontal Mobile Showcase App Carousel (Project 3) --- */
+        .carousel-container {
+            position: relative;
+            margin: 20px 0;
+            background: #0f172a; /* Sleek dark background for contrast */
+            padding: 20px;
+            border-radius: 14px;
+border: 1px solid #334155;
+        }
+
+        .carousel-title-hint {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .mobile-carousel {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Modern Scrollbar styling for the carousel */
+        .mobile-carousel::-webkit-scrollbar {
+            height: 6px;
+        }
+        .mobile-carousel::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 10px;
+        }
+
+        .carousel-mobile-item {
+            flex: 0 0 110px; /* Rigid smartphone frame dimensions */
+            height: 190px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #475569;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            background: #ffffff;
+        }
+
+        .carousel-mobile-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 8px 16px rgba(2, 132, 199, 0.4);
+        }
+
+        /* Lightbox Fullscreen Preview System */
         .lightbox {
             display: none;
             position: fixed;
@@ -332,7 +220,7 @@ box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
         }
 
         @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
+            from { transform: scale(0.95); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
 
@@ -401,7 +289,7 @@ box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
     <div class="skills-container">
         <div class="skills-box">
             <h3>Development & Databases</h3>
-            <div class="tech-stack">
+<div class="tech-stack">
                 <span class="tech-badge">Java</span>
                 <span class="tech-badge">PHP</span>
                 <span class="tech-badge">JavaScript</span>
@@ -427,7 +315,7 @@ box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
         <div class="project-thumbnail" onclick="openModal('project1')">
             <span class="project-icon">🔒</span>
             <h3>LockVid Encryption</h3>
-<span class="view-link">View Details →</span>
+            <span class="view-link">View Details →</span>
         </div>
 
         <div class="project-thumbnail" onclick="openModal('project2')">
@@ -458,14 +346,17 @@ box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
         <h2>LockVid Video Encryption System</h2>
         
         <div class="image-gallery">
-            <img src="p1_1.png" alt="LockVid Screen 1" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p1_2.png" alt="LockVid Screen 2" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p1_3.png" alt="LockVid Screen 3" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p1_4.png" alt="LockVid Screen 4" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p1_5.png" alt="LockVid Screen 5" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p1_6.png" alt="LockVid Screen 6" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p1_7.png" alt="LockVid Screen 7" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p1_8.png" alt="LockVid Screen 8" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_1.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_9.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_10.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_2.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_3.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_4.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_11.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_5.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_6.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_7.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_8.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
         </div>
         
         <div class="modal-body">
@@ -474,7 +365,7 @@ box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
             
             <h4>Technical Implementations</h4>
             <ul class="features-list">
-                <li><strong>Cryptographic Pipeline:</strong> Designed algorithms to seamlessly extract raw video frames, isolate primary RGB color channels, and apply automated Zigzag matrix scanning alongside randomized block rotations and multi-dimensional index shuffling.</li>
+<li><strong>Cryptographic Pipeline:</strong> Designed algorithms to seamlessly extract raw video frames, isolate primary RGB color channels, and apply automated Zigzag matrix scanning alongside randomized block rotations and multi-dimensional index shuffling.</li>
                 <li><strong>Transform Domain Protection:</strong> Integrated dual mathematical frameworks using Discrete Cosine Transform (DCT) and Singular Value Decomposition (SVD) to project spatial data into frequency coefficients, vastly increasing system defenses against unauthorized brute-force decryption attacks.</li>
                 <li><strong>Performance Analytics:</strong> Validated extreme security robustness by computing structural metrics, confirming exceptional Peak Signal-to-Noise Ratio (PSNR) values and strictly near-zero horizontal/vertical pixel correlation coefficients for uncompromised safety.</li>
             </ul>
@@ -492,12 +383,14 @@ box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
 
 <div id="project2" class="modal" onclick="closeModalViaBg(event, 'project2')">
     <div class="modal-content">
-<button class="close-btn" onclick="closeModal('project2')">&times;</button>
+        <button class="close-btn" onclick="closeModal('project2')">&times;</button>
         <span class="modal-tag">Software Engineering Architecture</span>
         <h2>Healthy Pet Veterinary Management System</h2>
         
         <div class="image-gallery">
-            <img src="p2_1.png" alt="Healthy Pet Overview Diagram" class="gallery-item" style="height: 150px;" onclick="previewImage(this.src)">
+            <img src="p2_1.png" alt="Healthy Pet View 1" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p2_2.png" alt="Healthy Pet View 2" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p2_3.png" alt="Healthy Pet View 3" class="gallery-item" onclick="previewImage(this.src)">
         </div>
         
         <div class="modal-body">
@@ -525,27 +418,36 @@ box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
 <div id="project3" class="modal" onclick="closeModalViaBg(event, 'project3')">
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal('project3')">&times;</button>
-        <span class="modal-tag">Human-Computer Interaction (HCI)</span>
+<span class="modal-tag">Human-Computer Interaction (HCI)</span>
         <h2>Sky Route Flight Reservation System</h2>
         
-        <div class="image-gallery mobile-gallery">
-            <img src="p3_1.png" alt="Mobile UI 1" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p3_2.png" alt="Mobile UI 2" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p3_3.png" alt="Mobile UI 3" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p3_4.png" alt="Mobile UI 4" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p3_5.png" alt="Mobile UI 5" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p3_6.png" alt="Mobile UI 6" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p3_7.png" alt="Mobile UI 7" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p3_8.png" alt="Mobile UI 8" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p3_9.png" alt="Mobile UI 9" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p3_10.png" alt="Mobile UI 10" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p3_11.png" alt="Mobile UI 11" class="gallery-item" onclick="previewImage(this.src)">
-            <img src="p3_12.png" alt="Mobile UI 12" class="gallery-item" onclick="previewImage(this.src)">
+        <div class="carousel-container">
+            <span class="carousel-title-hint">⬅️ Scroll horizontally to view all 18 mobile screens ➡️</span>
+            <div class="mobile-carousel">
+                <img src="p3_1.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_2.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_3.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_13.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_4.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_5.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_6.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_7.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_8.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_14.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_15.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_9.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_10.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_11.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_12.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_16.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_17.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+                <img src="p3_18.png" alt="Mobile UI" class="carousel-mobile-item" onclick="previewImage(this.src)">
+            </div>
         </div>
         
         <div class="modal-body">
             <h4>Project Overview</h4>
-<p>An advanced digital scheduling application engineered around strict usability parameters to make the airline reservation process faster and easier for both leisure and professional business travelers. The project focuses entirely on low cognitive stress and maximizing system response speed over standard market competitors.</p>
+            <p>An advanced digital scheduling application engineered around strict usability parameters to make the airline reservation process faster and easier for both leisure and professional business travelers. The project focuses entirely on low cognitive stress and maximizing system response speed over standard market competitors.</p>
             
             <h4>Technical Implementations</h4>
             <ul class="features-list">
@@ -558,7 +460,7 @@ box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
             <div class="tech-stack" style="margin-top:15px;">
                 <span class="tech-badge">Figma Prototypes</span>
                 <span class="tech-badge">HCI Interaction Design</span>
-                <span class="tech-badge">Usability Analytics</span>
+<span class="tech-badge">Usability Analytics</span>
                 <span class="tech-badge">User Research Methods</span>
             </div>
         </div>
@@ -572,8 +474,12 @@ box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
         <h2>Medical Appointment Scheduling System</h2>
         
         <div class="image-gallery">
-            <img src="p4_1.png" alt="Database Schema/Trigger Log" class="gallery-item" style="height: 120px;" onclick="previewImage(this.src)">
-            <img src="p4_2.png" alt="Oracle APEX Dashboard View" class="gallery-item" style="height: 120px;" onclick="previewImage(this.src)">
+            <img src="p4_1.png" alt="Database Script View" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p4_2.png" alt="Oracle APEX Component" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p4_3.png" alt="Database Logic Schema" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p4_4.png" alt="System Constraint Interface" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p4_5.png" alt="Medical System Log" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p4_6.png" alt="APEX Administrative View" class="gallery-item" onclick="previewImage(this.src)">
         </div>
         
         <div class="modal-body">
@@ -594,7 +500,7 @@ box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
                 <span class="tech-badge">Database Triggers & Sequences</span>
                 <span class="tech-badge">Data Integrity Constraints</span>
             </div>
-</div>
+        </div>
     </div>
 </div>
 
@@ -630,7 +536,8 @@ box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
     }
 
     function closeModalViaBg(event, id) {
-        if (event.target === document.getElementById(id)) {
+        if (event.
+target === document.getElementById(id)) {
             closeModal(id);
         }
     }
