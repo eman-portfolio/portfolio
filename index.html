@@ -294,11 +294,38 @@
             box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
         }
 
+        /* --- Project Team Section --- */
+        .project-team {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .team-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+            list-style: none;
+        }
+        
+        .team-member {
+            background: #ffffff;
+            color: #334155;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
         /* --- Premium Horizontal Mobile Showcase App Carousel (Project 3) --- */
         .carousel-container {
             position: relative;
             margin: 20px 0;
-            background: #0f172a; /* Sleek dark background for contrast */
+            background: #0f172a; 
             padding: 20px;
             border-radius: 14px;
             border: 1px solid #334155;
@@ -320,7 +347,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Custom Modern Scrollbar styling for the carousel */
         .mobile-carousel::-webkit-scrollbar {
             height: 6px;
         }
@@ -330,7 +356,7 @@
         }
 
         .carousel-mobile-item {
-            flex: 0 0 110px; /* Rigid smartphone frame dimensions */
+            flex: 0 0 110px; 
             height: 190px;
             object-fit: cover;
             border-radius: 10px;
@@ -434,12 +460,14 @@
 
 <div class="container">
 
+    <!-- About Me Section -->
     <header>
         <h1>Eman Mohammed Almutairi</h1>
         <p>Information Technology graduate with a strong foundation in full-stack development, database systems, engineering computation, and IT Support. Experienced in building academic and technical projects using Java, JavaScript, PHP, MySQL, MATLAB, HTML, and CSS. Dedicated to developing secure, user-centric, and high-performance digital solutions.</p>
     </header>
 
-    <h2 class="section-title">Technical Expertise</h2>
+    <!-- Skills Section -->
+    <h2 class="section-title">Technical Skills</h2>
     <div class="skills-container">
         <div class="skills-box">
             <h3>Development & Databases</h3>
@@ -464,6 +492,7 @@
         </div>
     </div>
 
+    <!-- Projects Dashboard Grid -->
     <h2 class="section-title">Projects Showcase</h2>
     <div class="projects-grid">
         <div class="project-thumbnail" onclick="openModal('project1')">
@@ -493,12 +522,14 @@
 
 </div>
 
+<!-- PROJECT 1 POPUP (LockVid - 11 Ordered Images + Team Contribution) -->
 <div id="project1" class="modal" onclick="closeModalViaBg(event, 'project1')">
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal('project1')">&times;</button>
         <span class="modal-tag">Information Security & Video Encryption</span>
         <h2>LockVid Video Encryption System</h2>
         
+        <!-- Grid layout incorporating your exact requested ordering -->
         <div class="image-gallery">
             <img src="p1_1.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
             <img src="p1_9.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
@@ -531,16 +562,30 @@
                 <span class="tech-badge">Transform Domain Cryptography</span>
                 <span class="tech-badge">GUI Dashboard Development</span>
             </div>
+
+            <!-- Capstone Team Section (Kept as requested) -->
+            <div class="project-team">
+                <strong>💡 Project Development Team:</strong>
+                <ul class="team-list">
+                    <li class="team-member">Eman Mohammed Almutairi</li>
+                    <li class="team-member">Alhanoof Khalid Alshalawi</li>
+                    <li class="team-member">Aseel Nawaf Almubarak</li>
+                    <li class="team-member">Layan Ali Alqahtani</li>
+                    <li class="team-member">Raghad Thabet Alanazi</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
 
+<!-- PROJECT 2 POPUP (Healthy Pet - Find a Pet Doctor - 3 Ordered Images) -->
 <div id="project2" class="modal" onclick="closeModalViaBg(event, 'project2')">
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal('project2')">&times;</button>
         <span class="modal-tag">Software Engineering Architecture</span>
         <h2>Healthy Pet Veterinary Management System</h2>
         
+        <!-- 3 Ordered Images Grid -->
         <div class="image-gallery">
             <img src="p2_1.png" alt="Healthy Pet View 1" class="gallery-item" onclick="previewImage(this.src)">
             <img src="p2_2.png" alt="Healthy Pet View 2" class="gallery-item" onclick="previewImage(this.src)">
@@ -569,12 +614,14 @@
     </div>
 </div>
 
+<!-- PROJECT 3 POPUP (Sky Route Flight Booking - 18 Mobile Images Carousel) -->
 <div id="project3" class="modal" onclick="closeModalViaBg(event, 'project3')">
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal('project3')">&times;</button>
         <span class="modal-tag">Human-Computer Interaction (HCI)</span>
         <h2>Sky Route Flight Reservation System</h2>
         
+        <!-- Horizontal UI App Showcase Carousel with exact requested sorting -->
         <div class="carousel-container">
             <span class="carousel-title-hint">⬅️ Scroll horizontally to view all 18 mobile screens ➡️</span>
             <div class="mobile-carousel">
@@ -621,12 +668,14 @@
     </div>
 </div>
 
+<!-- PROJECT 4 POPUP (Medical Appointment - 6 Ordered Images) -->
 <div id="project4" class="modal" onclick="closeModalViaBg(event, 'project4')">
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal('project4')">&times;</button>
         <span class="modal-tag">Database Management Systems (DBMS)</span>
         <h2>Medical Appointment Scheduling System</h2>
         
+        <!-- 6 Ordered Database & Application Interface Images -->
         <div class="image-gallery">
             <img src="p4_1.png" alt="Database Script View" class="gallery-item" onclick="previewImage(this.src)">
             <img src="p4_2.png" alt="Oracle APEX Component" class="gallery-item" onclick="previewImage(this.src)">
@@ -658,10 +707,12 @@
     </div>
 </div>
 
+<!-- LIGHTBOX INTERACTIVE FULLSCREEN PREVIEW -->
 <div id="customLightbox" class="lightbox" onclick="closeLightbox()">
     <img id="lightboxImg" class="lightbox-img" src="" alt="Fullscreen Preview">
 </div>
 
+<!-- Contact & Footer Section -->
 <div class="container">
     <footer>
         <h2>Get In Touch</h2>
