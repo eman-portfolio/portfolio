@@ -1,232 +1,650 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eman Mohammed | Full Stack Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eman Mohammed | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
+            --primary: #0284c7;
+            --primary-light: #e0f2fe;
+            --secondary: #10b981;
+            --border-color: #e2e8f0;
+        }
 
-<style>
-:root {
-    --primary: #6D28D9;
-    --secondary: #A78BFA;
-    --accent: #8B5CF6;
-    --bg: #F9FAFB;
-    --card: #FFFFFF;
-    --text: #111827;
-    --muted: #6B7280;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-body {
-    margin: 0;
-    font-family: "Arial", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-}
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
 
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 90px 20px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: white;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-}
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
 
-.hero h1 {
-    font-size: 52px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
+        /* Hero Section */
+        header {
+            text-align: center;
+            padding: 40px 25px;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
 
-.hero p {
-    font-size: 18px;
-    opacity: 0.9;
-}
+        header h1 {
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
 
-.btn {
-    display: inline-block;
-    margin: 12px 8px;
-    padding: 12px 22px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
-    background: rgba(255,255,255,0.2);
-    border: 1px solid rgba(255,255,255,0.3);
-    backdrop-filter: blur(6px);
-    transition: 0.3s;
-}
+        header p {
+            color: #334155;
+            font-size: 0.95rem;
+            max-width: 780px;
+            margin: 0 auto;
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 1.7;
+        }
 
-.btn:hover {
-    background: white;
-    color: var(--primary);
-}
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin: 40px 0 20px 0;
+            position: relative;
+            padding-bottom: 8px;
+        }
 
-/* SECTIONS */
-section {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 30px;
-}
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
 
-/* TITLES */
-h2 {
-    font-size: 26px;
-    margin-bottom: 15px;
-    position: relative;
-}
+        /* Skills Layout */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
 
-h2::after {
-    content: "";
-    width: 50px;
-    height: 4px;
-    background: var(--primary);
-    display: block;
-    margin-top: 8px;
-    border-radius: 10px;
-}
+        .skills-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+        }
 
-/* SKILLS */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
+        .skills-box h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
 
-.skills span {
-    background: white;
-    border: 1px solid #E5E7EB;
-    padding: 10px 14px;
-    border-radius: 999px;
-    font-size: 14px;
-    transition: 0.3s;
-}
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
 
-.skills span:hover {
-    background: var(--primary);
-    color: white;
-}
+        .tech-badge {
+            background: #f1f5f9;
+            color: #334155;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
 
-/* PROJECTS */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
+        /* Projects Dashboard Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
+        }
 
-.card {
-    background: var(--card);
-    padding: 22px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    transition: 0.3s;
-    border: 1px solid #F3F4F6;
-}
+        .project-thumbnail {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        }
 
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(109,40,217,0.15);
-}
+        .project-thumbnail:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 20px rgba(2, 132, 199, 0.08);
+        }
 
-.card h3 {
-    color: var(--primary);
-    margin-top: 0;
-}
+        .project-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
 
-/* CONTACT */
-.contact {
-    text-align: center;
-    padding-bottom: 60px;
-}
+        .project-thumbnail h3 {
+            font-size: 1.1rem;
+color: var(--text-color);
+            font-weight: 600;
+        }
 
-a {
-    color: var(--primary);
-    text-decoration: none;
-}
+        .view-link {
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-top: 10px;
+            font-weight: 600;
+            display: block;
+        }
 
-a:hover {
-    text-decoration: underline;
-}
-</style>
+        /* Interactive Modal/Popup Mechanism */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            max-width: 750px;
+            width: 100%;
+            padding: 35px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: var(--text-color);
+        }
+
+        .modal-tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .modal-body h4 {
+            margin: 20px 0 8px 0;
+            font-size: 1.05rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-body p {
+            color: #334155;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .features-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .features-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+            color: #334155;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* --- New Image Gallery Layouts --- */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px dashed var(--border-color);
+        }
+
+        /* Specialized grid for mobile UI screenshots (Project 3) */
+        .mobile-gallery {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #ffffff;
+        }
+
+        /* Mobile specific item aspect-ratio */
+        .mobile-gallery .gallery-item {
+            height: 160px; /* Taller for mobile UI frames */
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+        }
+
+        /* Lightbox Fullscreen Preview */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            animation: zoomIn 0.2s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Footer & Contact Section */
+        footer {
+            margin-top: 60px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 35px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        }
+
+        footer h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #334155;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            transition: all 0.2s;
+            background: #f8fafc;
+        }
+
+        .contact-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="hero">
-    <h1>Eman Mohammed</h1>
-    <p>Full-Stack Developer | Software Engineering Graduate | MATLAB & Database Systems | IT Supports </p>
+<div class="container">
 
-    <a href="#projects" class="btn">View Projects</a>
-    <a href="#contact" class="btn">Contact Me</a>
+    <header>
+        <h1>Eman Mohammed Almutairi</h1>
+        <p>Information Technology graduate with a strong foundation in full-stack development, database systems, engineering computation, and IT Support. Experienced in building academic and technical projects using Java, JavaScript, PHP, MySQL, MATLAB, HTML, and CSS. Dedicated to developing secure, user-centric, and high-performance digital solutions.</p>
+    </header>
+
+    <h2 class="section-title">Technical Expertise</h2>
+    <div class="skills-container">
+        <div class="skills-box">
+            <h3>Development & Databases</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">PHP</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">HTML5 / CSS3</span>
+                <span class="tech-badge">MATLAB</span>
+            </div>
+        </div>
+        <div class="skills-box">
+            <h3>IT Support & Systems</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">Hardware & Software Troubleshooting</span>
+                <span class="tech-badge">Windows & Linux Administration</span>
+                <span class="tech-badge">End-User Support</span>
+                <span class="tech-badge">Microsoft 365</span>
+                <span class="tech-badge">Problem Solving</span>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Projects Showcase</h2>
+    <div class="projects-grid">
+        <div class="project-thumbnail" onclick="openModal('project1')">
+            <span class="project-icon">🔒</span>
+            <h3>LockVid Encryption</h3>
+<span class="view-link">View Details →</span>
+        </div>
+
+        <div class="project-thumbnail" onclick="openModal('project2')">
+            <span class="project-icon">🐾</span>
+            <h3>Healthy Pet System</h3>
+            <span class="view-link">View Details →</span>
+        </div>
+
+        <div class="project-thumbnail" onclick="openModal('project3')">
+            <span class="project-icon">✈️</span>
+            <h3>Sky Route Booking</h3>
+            <span class="view-link">View Details →</span>
+        </div>
+
+        <div class="project-thumbnail" onclick="openModal('project4')">
+            <span class="project-icon">🏥</span>
+            <h3>Medical Appointment</h3>
+            <span class="view-link">View Details →</span>
+        </div>
+    </div>
+
 </div>
 
-<section>
-    <h2>About Me</h2>
-    <p>
-        Information Technology graduate with strong foundation in full-stack development,
-        database systems, and engineering computation , IT Supports. Experienced in building academic
-        and technical projects using Java, JavaScript, PHP, MySQL, MATLAB, HTML, and CSS.
-    </p>
-</section>
+<div id="project1" class="modal" onclick="closeModalViaBg(event, 'project1')">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('project1')">&times;</button>
+        <span class="modal-tag">Information Security & Video Encryption</span>
+        <h2>LockVid Video Encryption System</h2>
+        
+        <div class="image-gallery">
+            <img src="p1_1.png" alt="LockVid Screen 1" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_2.png" alt="LockVid Screen 2" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_3.png" alt="LockVid Screen 3" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_4.png" alt="LockVid Screen 4" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_5.png" alt="LockVid Screen 5" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_6.png" alt="LockVid Screen 6" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_7.png" alt="LockVid Screen 7" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p1_8.png" alt="LockVid Screen 8" class="gallery-item" onclick="previewImage(this.src)">
+        </div>
+        
+        <div class="modal-body">
+            <h4>Project Overview</h4>
+            <p>An innovative capstone research and practical implementation resolving high resource overhead and computational latency within traditional video encryption. It introduces <strong>Block Scrambling</strong> mechanisms to safeguard colorful video streams over unstable networks without disrupting real-time streaming experiences or inducing visual decay.</p>
+            
+            <h4>Technical Implementations</h4>
+            <ul class="features-list">
+                <li><strong>Cryptographic Pipeline:</strong> Designed algorithms to seamlessly extract raw video frames, isolate primary RGB color channels, and apply automated Zigzag matrix scanning alongside randomized block rotations and multi-dimensional index shuffling.</li>
+                <li><strong>Transform Domain Protection:</strong> Integrated dual mathematical frameworks using Discrete Cosine Transform (DCT) and Singular Value Decomposition (SVD) to project spatial data into frequency coefficients, vastly increasing system defenses against unauthorized brute-force decryption attacks.</li>
+                <li><strong>Performance Analytics:</strong> Validated extreme security robustness by computing structural metrics, confirming exceptional Peak Signal-to-Noise Ratio (PSNR) values and strictly near-zero horizontal/vertical pixel correlation coefficients for uncompromised safety.</li>
+            </ul>
 
-<section>
-    <h2>Skills</h2>
-    <div class="skills">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Java</span>
-        <span>PHP</span>
-        <span>MySQL</span>
-        <span>MATLAB</span>
-        <span>Hardware & Software Troubleshooting</span>
-        <span>Windows & Linux Administration</span>
-        <span>End-User Support</span>
-        <span>Microsoft 365</span>
-        <span>Problem Solving</span>
+            <h4>Technical Stack</h4>
+            <div class="tech-stack" style="margin-top:15px;">
+                <span class="tech-badge">MATLAB</span>
+                <span class="tech-badge">Image Processing Toolbox</span>
+                <span class="tech-badge">Transform Domain Cryptography</span>
+                <span class="tech-badge">GUI Dashboard Development</span>
+            </div>
+        </div>
     </div>
-</section>
-
-<section id="projects">
-    <h2>Projects</h2>
-
-   <div class="card">
-    <h3>LockVid Video Encryption System</h3>
-    <p>Graduation project focused on secure video encryption using MATLAB.</p>
-
-    <a href="LockVid.html">
-        View Project →
-    </a>
 </div>
 
-        <div class="card">
-            <h3>Medical Appointment System</h3>
-            <p>Database system with MySQL, stored procedures, triggers, and role-based access.</p>
+<div id="project2" class="modal" onclick="closeModalViaBg(event, 'project2')">
+    <div class="modal-content">
+<button class="close-btn" onclick="closeModal('project2')">&times;</button>
+        <span class="modal-tag">Software Engineering Architecture</span>
+        <h2>Healthy Pet Veterinary Management System</h2>
+        
+        <div class="image-gallery">
+            <img src="p2_1.png" alt="Healthy Pet Overview Diagram" class="gallery-item" style="height: 150px;" onclick="previewImage(this.src)">
         </div>
+        
+        <div class="modal-body">
+            <h4>Project Overview</h4>
+            <p>A comprehensive, user-centric enterprise web environment architected to unify clinical veterinary management and client-facing medical interfaces. The system streamlines end-to-end clinical operational workflows, records tracking, and fast care delivery for pet owners.</p>
+            
+            <h4>Technical Implementations</h4>
+            <ul class="features-list">
+                <li><strong>Lifecycle Framework:</strong> Adopted a structured <strong>Incremental Process Model</strong> to build core architectures step-by-step, minimizing upfront integration risks, maintaining code agility, and lowering total implementation overhead.</li>
+                <li><strong>Functional Workflow Engineering:</strong> Developed safe user authentication modules, full-stack medical history record entry interfaces, structured calendar scheduling engines, dynamic appointment cancellation/waiting list components, and automated notification loops.</li>
+                <li><strong>System Architecture Modeling:</strong> Mapped complete system schemas and behavioral constraints by constructing high-fidelity UML Use-Case structures, object-oriented Class diagrams, interactive Sequence workflows, and conditional Activity routing graphs.</li>
+            </ul>
 
-        <div class="card">
-            <h3>Veterinary Clinic System</h3>
-            <p>Software engineering project focused on system design and UML modeling.</p>
+            <h4>Technical Stack</h4>
+            <div class="tech-stack" style="margin-top:15px;">
+                <span class="tech-badge">Java / PHP</span>
+                <span class="tech-badge">MySQL Relational Database</span>
+                <span class="tech-badge">UML Modeling Tools</span>
+                <span class="tech-badge">Incremental Methodology</span>
+            </div>
         </div>
-
-        <div class="card">
-            <h3>Flight Reservation System</h3>
-            <p>UI/UX system design focusing on usability and user experience testing.</p>
-        </div>
-
     </div>
-</section>
+</div>
 
-<section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p> Email:Eman.mohammed.sm@gmail.com </p>
-    <p>
-        <a href="https://www.linkedin.com/in/it-eman" target="_blank">
-            LinkedIn Profile
-        </a>
-    </p>
-</section>
+<div id="project3" class="modal" onclick="closeModalViaBg(event, 'project3')">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('project3')">&times;</button>
+        <span class="modal-tag">Human-Computer Interaction (HCI)</span>
+        <h2>Sky Route Flight Reservation System</h2>
+        
+        <div class="image-gallery mobile-gallery">
+            <img src="p3_1.png" alt="Mobile UI 1" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p3_2.png" alt="Mobile UI 2" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p3_3.png" alt="Mobile UI 3" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p3_4.png" alt="Mobile UI 4" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p3_5.png" alt="Mobile UI 5" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p3_6.png" alt="Mobile UI 6" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p3_7.png" alt="Mobile UI 7" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p3_8.png" alt="Mobile UI 8" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p3_9.png" alt="Mobile UI 9" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p3_10.png" alt="Mobile UI 10" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p3_11.png" alt="Mobile UI 11" class="gallery-item" onclick="previewImage(this.src)">
+            <img src="p3_12.png" alt="Mobile UI 12" class="gallery-item" onclick="previewImage(this.src)">
+        </div>
+        
+        <div class="modal-body">
+            <h4>Project Overview</h4>
+<p>An advanced digital scheduling application engineered around strict usability parameters to make the airline reservation process faster and easier for both leisure and professional business travelers. The project focuses entirely on low cognitive stress and maximizing system response speed over standard market competitors.</p>
+            
+            <h4>Technical Implementations</h4>
+            <ul class="features-list">
+                <li><strong>UI/UX Design Engineering:</strong> Modeled a beautiful Graphical User Interface (GUI) mapping complex data parameters into simplified menu-driven navigation trees and predictive form-fill wizards to minimize user data entry errors.</li>
+                <li><strong>Core Functional Modules:</strong> Implemented responsive flight search algorithms, interactive visual seating maps, granular baggage configurations, and an intuitive checkout payment screen mockup with localized language selectors.</li>
+                <li><strong>Usability Testing & Research:</strong> Executed intensive usability testing labs tracking user execution speeds on recurrent tasks. Gathered extensive qualitative/quantitative metrics via user interviews and field questionnaire surveys to refine design bottlenecks.</li>
+            </ul>
+
+            <h4>Technical Stack</h4>
+            <div class="tech-stack" style="margin-top:15px;">
+                <span class="tech-badge">Figma Prototypes</span>
+                <span class="tech-badge">HCI Interaction Design</span>
+                <span class="tech-badge">Usability Analytics</span>
+                <span class="tech-badge">User Research Methods</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="project4" class="modal" onclick="closeModalViaBg(event, 'project4')">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('project4')">&times;</button>
+        <span class="modal-tag">Database Management Systems (DBMS)</span>
+        <h2>Medical Appointment Scheduling System</h2>
+        
+        <div class="image-gallery">
+            <img src="p4_1.png" alt="Database Schema/Trigger Log" class="gallery-item" style="height: 120px;" onclick="previewImage(this.src)">
+            <img src="p4_2.png" alt="Oracle APEX Dashboard View" class="gallery-item" style="height: 120px;" onclick="previewImage(this.src)">
+        </div>
+        
+        <div class="modal-body">
+            <h4>Project Overview</h4>
+            <p>A back-end relational database solution designed to optimize hospital and clinic administration. The system securely automates scheduling, preserves patient-doctor constraints, and prevents overlapping reservations or scheduling conflicts through automated structural constraints.</p>
+            
+            <h4>Technical Implementations</h4>
+            <ul class="features-list">
+                <li><strong>Database Schema & Constraints:</strong> Engineered relational schemas with strict Primary and Foreign Key relational data mapping (Patients, Doctors, Appointments, and Users Tables).</li>
+                <li><strong>Business Logic Automation:</strong> Implemented safe transaction handling using numeric Sequences for auto-increment keys and PL/SQL Triggers (e.g., <code>PREVENT_LATE_BOOKING</code>) to programmatically block same-doctor booking overlaps and prevent last-minute reservations (less than 15 minutes in advance).</li>
+                <li><strong>Enterprise Deployment:</strong> Integrated and deployed data operational flows through an <strong>Oracle APEX (Application Builder)</strong> interface dashboard for administration and role-based access management.</li>
+            </ul>
+
+            <h4>Technical Stack</h4>
+            <div class="tech-stack" style="margin-top:15px;">
+                <span class="tech-badge">SQL / PL-SQL</span>
+                <span class="tech-badge">Oracle APEX Cloud</span>
+                <span class="tech-badge">Database Triggers & Sequences</span>
+                <span class="tech-badge">Data Integrity Constraints</span>
+            </div>
+</div>
+    </div>
+</div>
+
+<div id="customLightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" class="lightbox-img" src="" alt="Fullscreen Preview">
+</div>
+
+<div class="container">
+    <footer>
+        <h2>Get In Touch</h2>
+        <div class="contact-links">
+            <a href="https://www.linkedin.com/in/it-eman" target="_blank" class="contact-btn">
+                <span>🔗</span> LinkedIn Profile
+            </a>
+            <a href="mailto:Eman.mohammed.sm@gmail.com" class="contact-btn">
+                <span>✉️</span> Send Email
+            </a>
+        </div>
+        <p class="copyright">Eman Mohammed Almutairi © 2026 | All Rights Reserved</p>
+    </footer>
+</div>
+
+<script>
+    // Project Modals Controller
+    function openModal(id) {
+        document.getElementById(id).classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).classList.remove('active');
+        document.body.style.overflow = 'auto'; 
+    }
+
+    function closeModalViaBg(event, id) {
+        if (event.target === document.getElementById(id)) {
+            closeModal(id);
+        }
+    }
+
+    // Lightbox Image Zoom Functionality
+    function previewImage(imageSrc) {
+        document.getElementById('lightboxImg').src = imageSrc;
+        document.getElementById('customLightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+        document.getElementById('customLightbox').classList.remove('active');
+    }
+</script>
 
 </body>
 </html>
