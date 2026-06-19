@@ -21,6 +21,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth; /* تجعل التنقل بين الأقسام ناعماً وسلساً */
         }
 
         body {
@@ -38,7 +39,7 @@
         /* Hero Section */
         header {
             text-align: center;
-            padding: 40px 25px;
+            padding: 50px 25px;
             margin-bottom: 40px;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -47,16 +48,65 @@
         }
 
         header h1 {
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
-        header p {
+        /* Headline Style */
+        .headline {
+            font-size: 1.25rem;
+            color: #475569;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Quick Navigation Action Buttons */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-scroller-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .nav-scroller-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        /* About Me Card Section */
+        .about-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 25px 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        }
+
+        .about-card p {
             color: #334155;
             font-size: 0.95rem;
-            max-width: 780px;
-            margin: 0 auto;
             text-align: justify;
             text-justify: inter-word;
             line-height: 1.7;
@@ -454,19 +504,30 @@
             font-size: 0.85rem;
             color: var(--text-muted);
         }
+
+        /* Style for the Protection Warning text */
+        .protection-warning {
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: #ef4444; 
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
 
-    <!-- About Me Section -->
     <header>
         <h1>Eman Mohammed Almutairi</h1>
-        <p>Information Technology graduate with a strong foundation in full-stack development, database systems, engineering computation, and IT Support. Experienced in building academic and technical projects using Java, JavaScript, PHP, MySQL, MATLAB, HTML, and CSS. Dedicated to developing secure, user-centric, and high-performance digital solutions.</p>
+        <div class="headline">Information Technology Graduate | IT Support | Systems Analysis | Wed Development</div>
+        
+        <div class="quick-nav">
+            <a href="#projects-section" class="nav-scroller-btn">💻 View My Projects</a>
+            <a href="#contact-section" class="nav-scroller-btn">✉️ Contact Information</a>
+        </div>
     </header>
 
-    <!-- Skills Section -->
     <h2 class="section-title">Technical Skills</h2>
     <div class="skills-container">
         <div class="skills-box">
@@ -474,10 +535,12 @@
             <div class="tech-stack">
                 <span class="tech-badge">Java</span>
                 <span class="tech-badge">PHP</span>
-                <span class="tech-badge">JavaScript</span>
                 <span class="tech-badge">MySQL</span>
                 <span class="tech-badge">HTML5 / CSS3</span>
+                <span class="tech-badge">ASP.NET</span>
                 <span class="tech-badge">MATLAB</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">JavaScript</span>
             </div>
         </div>
         <div class="skills-box">
@@ -485,6 +548,7 @@
             <div class="tech-stack">
                 <span class="tech-badge">Hardware & Software Troubleshooting</span>
                 <span class="tech-badge">Windows & Linux Administration</span>
+                 <span class="tech-badge">Database & SQL Knowledge</span>
                 <span class="tech-badge">End-User Support</span>
                 <span class="tech-badge">Microsoft 365</span>
                 <span class="tech-badge">Problem Solving</span>
@@ -492,8 +556,18 @@
         </div>
     </div>
 
-    <!-- Projects Dashboard Grid -->
-    <h2 class="section-title">Projects Showcase</h2>
+    <h2 class="section-title">About Me</h2>
+    <div class="about-card">
+        <p>Information Technology graduate with hands-on experience in IT support, technical troubleshooting, and system administration within professional environments. Passionate about technology, continuous learning, and delivering effective solutions that enhance business operations and organizational efficiency. Skilled in problem-solving, communication, and teamwork, with a strong ability to adapt quickly to new technologies and challenges. Eager to contribute to a dynamic organization by supporting innovation, improving productivity, and driving continuous growth while expanding my technical expertise.
+
+
+
+            I strongly believe that potential, dedication, and the willingness to learn can be just as valuable as years of experience. Many talented graduates are ready to contribute, innovate, and exceed expectations when given the opportunity. I am committed to continuous growth, taking initiative, and proving my capabilities through hard work, adaptability, and meaningful results. All I seek is an opportunity to demonstrate the value I can bring and the impact I can make.
+        
+        </p>
+    </div>
+
+    <h2 class="section-title" id="projects-section">Projects Showcase</h2>
     <div class="projects-grid">
         <div class="project-thumbnail" onclick="openModal('project1')">
             <span class="project-icon">🔒</span>
@@ -522,14 +596,12 @@
 
 </div>
 
-<!-- PROJECT 1 POPUP (LockVid - 11 Ordered Images + Team Contribution) -->
 <div id="project1" class="modal" onclick="closeModalViaBg(event, 'project1')">
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal('project1')">&times;</button>
         <span class="modal-tag">Information Security & Video Encryption</span>
         <h2>LockVid Video Encryption System</h2>
         
-        <!-- Grid layout incorporating your exact requested ordering -->
         <div class="image-gallery">
             <img src="p1_1.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
             <img src="p1_9.png" alt="LockVid Screen" class="gallery-item" onclick="previewImage(this.src)">
@@ -563,7 +635,6 @@
                 <span class="tech-badge">GUI Dashboard Development</span>
             </div>
 
-            <!-- Capstone Team Section (Kept as requested) -->
             <div class="project-team">
                 <strong>💡 Project Development Team:</strong>
                 <ul class="team-list">
@@ -578,14 +649,12 @@
     </div>
 </div>
 
-<!-- PROJECT 2 POPUP (Healthy Pet - Find a Pet Doctor - 3 Ordered Images) -->
 <div id="project2" class="modal" onclick="closeModalViaBg(event, 'project2')">
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal('project2')">&times;</button>
         <span class="modal-tag">Software Engineering Architecture</span>
         <h2>Healthy Pet Veterinary Management System</h2>
         
-        <!-- 3 Ordered Images Grid -->
         <div class="image-gallery">
             <img src="p2_1.png" alt="Healthy Pet View 1" class="gallery-item" onclick="previewImage(this.src)">
             <img src="p2_2.png" alt="Healthy Pet View 2" class="gallery-item" onclick="previewImage(this.src)">
@@ -614,14 +683,12 @@
     </div>
 </div>
 
-<!-- PROJECT 3 POPUP (Sky Route Flight Booking - 18 Mobile Images Carousel) -->
 <div id="project3" class="modal" onclick="closeModalViaBg(event, 'project3')">
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal('project3')">&times;</button>
         <span class="modal-tag">Human-Computer Interaction (HCI)</span>
         <h2>Sky Route Flight Reservation System</h2>
         
-        <!-- Horizontal UI App Showcase Carousel with exact requested sorting -->
         <div class="carousel-container">
             <span class="carousel-title-hint">⬅️ Scroll horizontally to view all 18 mobile screens ➡️</span>
             <div class="mobile-carousel">
@@ -668,14 +735,12 @@
     </div>
 </div>
 
-<!-- PROJECT 4 POPUP (Medical Appointment - 6 Ordered Images) -->
 <div id="project4" class="modal" onclick="closeModalViaBg(event, 'project4')">
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal('project4')">&times;</button>
         <span class="modal-tag">Database Management Systems (DBMS)</span>
         <h2>Medical Appointment Scheduling System</h2>
         
-        <!-- 6 Ordered Database & Application Interface Images -->
         <div class="image-gallery">
             <img src="p4_1.png" alt="Database Script View" class="gallery-item" onclick="previewImage(this.src)">
             <img src="p4_2.png" alt="Oracle APEX Component" class="gallery-item" onclick="previewImage(this.src)">
@@ -707,13 +772,11 @@
     </div>
 </div>
 
-<!-- LIGHTBOX INTERACTIVE FULLSCREEN PREVIEW -->
 <div id="customLightbox" class="lightbox" onclick="closeLightbox()">
     <img id="lightboxImg" class="lightbox-img" src="" alt="Fullscreen Preview">
 </div>
 
-<!-- Contact & Footer Section -->
-<div class="container">
+<div class="container" id="contact-section">
     <footer>
         <h2>Get In Touch</h2>
         <div class="contact-links">
@@ -724,7 +787,10 @@
                 <span>✉️</span> Send Email
             </a>
         </div>
+        
         <p class="copyright">Eman Mohammed Almutairi © 2026 | All Rights Reserved</p>
+        
+        
     </footer>
 </div>
 
